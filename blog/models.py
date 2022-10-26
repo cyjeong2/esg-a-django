@@ -8,4 +8,4 @@ class Post(models.Model) :
     created_at = models.DateTimeField()
     
     def __str__(self):
-        return "!!!" + self.title
+        return f'[{self.pk}] {self.title}'
