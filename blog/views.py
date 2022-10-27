@@ -13,3 +13,12 @@ def single_post_page(request, pk) :
     return render(request, "blog/single_post_page.html", {
         "post" : post,
     })
+
+from django.views.generic import CreateView
+from blog.forms import PostForm
+
+post_new = CreateView.as_view(
+    form_class = PostForm,
+    model=Post,
+    success_url = "/blog/",
+)
