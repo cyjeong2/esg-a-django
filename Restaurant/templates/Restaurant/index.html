@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+</head>
+<body>
+    <h1>Restaurant</h1>
+{% for r in posts %}
+    <hr/>
+    <h4><a href="{{ r.get_absolute_url }}">{{ r.name }}</a></h4>
+    <h2>{{ r.average_score }}
+    <p>{{ r.description }}</p>
+{% endfor %}
+<a href="/Restaurant/new/">새 포스팅 쓰기</a>
+
+</body>
+</html>
