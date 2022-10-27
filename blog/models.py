@@ -1,5 +1,16 @@
 from django.db import models
+from django.core.validators import MaxValueValidator
 
+class Restaurant(models.Model):
+    name = models.sCharField(max_length=100)
+    description = models.TextField()
+    average_score = models.PositiveSmallIntegerField(
+        validators=[
+            MaxValueValidator(5),
+        ]
+    )
+
+# Post model
 class Post(models.Model) :
     title = models.CharField(max_length = 30)
     content = models.TextField()
